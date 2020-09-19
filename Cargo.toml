@@ -1,0 +1,6 @@
+[workspace]
+members = [
+    "libimobiledevice-sys",
+    "libirecovery-sys",
+    "libusbmuxd-sys"
+]
