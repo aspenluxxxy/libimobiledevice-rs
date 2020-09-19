@@ -3,6 +3,11 @@
 
 `libimobiledevice-rs` provides Rust bindings for the [libimobiledevice](https://github.com/libimobiledevice/libimobiledevice), [libirecovery](https://github.com/libimobiledevice/libirecovery), and [libusbmuxd](https://github.com/libimobiledevice/libusbmuxd) libraries, for interfacing with iOS devices.
 
+## Documentation
+
+[libimobiledevice-sys](https://aspenuwu.me/docs/libimobiledevice-rs/libimobiledevice_sys/)  
+[libirecovery-sys](https://aspenuwu.me/docs/libimobiledevice-rs/libirecovery_sys/)  
+[libusbmuxd](https://aspenuwu.me/docs/libimobiledevice-rs/libusbmuxd_sys/)  
 
 ## Licenses
 
