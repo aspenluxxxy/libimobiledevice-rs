@@ -1,9 +1,10 @@
 [package]
 name = "libimobiledevice-sys"
 description = "Bindings to libimobiledevice, a cross-platform software library that talks the protocols to interact with iOS devices."
-version = "0.1.0"
+version = "0.1.1"
 authors = ["aspen <luxx4x@protonmail.com>"]
 repository = "https://github.com/aspenluxxxy/libimobiledevice-rs"
+documentation = "https://aspenuwu.me/docs/libimobiledevice-rs/libirecovery_sys"
 readme = "../README.md"
 license = "Zlib"
 keywords = ["ios", "ffi", "usb", "apple"]
