@@ -13,5 +13,5 @@ links = "usbmuxd"
 edition = "2018"
 
 [build-dependencies]
-bindgen = "0.55"
+bindgen = "0.56"
 pkg-config = "0.3"
