@@ -1,17 +1,38 @@
+use bindgen::Builder;
 use std::path::PathBuf;
 
-fn main() {
-	pkg_config::Config::new()
+#[cfg(not(feature = "vendored"))]
+fn link(mut binder: Builder) -> Builder {
+	let package = pkg_config::Config::new()
 		.probe("libusbmuxd-2.0")
 		.expect("Could not find libusbmuxd! Ensure that it is installed!");
 
-	println!("cargo:rustc-link-lib=usbmuxd-2.0");
+	for lib in package.libs {
+		println!("cargo:rustc-link-lib={}", lib);
+	}
 
-	let bindings = bindgen::builder()
-		.header("wrapper.h")
-		.parse_callbacks(Box::new(bindgen::CargoCallbacks))
-		.generate()
-		.expect("Unable to generate bindings for libusbmuxd!");
+	for include_path in package.include_paths {
+		binder = binder.clang_arg(format!("-I{}", include_path.display()));
+	}
+	binder
+}
+
+#[cfg(feature = "vendored")]
+fn link(mut binder: Builder) -> Builder {
+	for include_path in libusbmuxd_src::build() {
+		binder = binder.clang_arg(format!("-I{}", include_path));
+	}
+	binder
+}
+
+fn main() {
+	let bindings = link(
+		bindgen::builder()
+			.header("wrapper.h")
+			.parse_callbacks(Box::new(bindgen::CargoCallbacks)),
+	)
+	.generate()
+	.expect("Unable to generate bindings for libusbmuxd!");
 
 	let out_path = PathBuf::from(std::env::var("OUT_DIR").unwrap()).join("bindings.rs");
 	bindings

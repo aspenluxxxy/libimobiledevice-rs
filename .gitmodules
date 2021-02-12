@@ -1,0 +1,6 @@
+[submodule "libplist-src/libplist"]
+	path = libplist-src/libplist
+	url = https://github.com/libimobiledevice/libplist
+[submodule "libusbmuxd-src/libusbmuxd"]
+	path = libusbmuxd-src/libusbmuxd
+	url = https://github.com/libimobiledevice/libusbmuxd
