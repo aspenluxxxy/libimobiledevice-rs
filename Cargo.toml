@@ -1,7 +1,9 @@
 [workspace]
 members = [
-	"libplist-src",
+	"libimobiledevice-src",
 	"libimobiledevice-sys",
 	"libirecovery-sys",
+	"libplist-src",
+	"libusbmuxd-src",
 	"libusbmuxd-sys",
 ]

@@ -13,12 +13,15 @@ pub fn build() -> Vec<String> {
 	include_path.push(libusbmuxd_common.display().to_string());
 	include_path.push(libusbmuxd_dir.join("include").display().to_string());
 
+	let common_files = ["collection.c", "socket.c", "thread.c"]
+		.iter()
+		.map(|file| libusbmuxd_common.join(file))
+		.collect::<Vec<PathBuf>>();
+
 	Build::new()
 		.define("HAVE_STPNCPY", "1")
 		.define("PACKAGE_STRING", "\"libusbmuxd\"")
-		.file(libusbmuxd_common.join("collection.c"))
-		.file(libusbmuxd_common.join("socket.c"))
-		.file(libusbmuxd_common.join("thread.c"))
+		.files(common_files)
 		.file(libusbmuxd_src.join("libusbmuxd.c"))
 		.includes(&include_path)
 		.out_dir(out_dir)

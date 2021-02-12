@@ -15,6 +15,7 @@ edition = "2018"
 [build-dependencies]
 bindgen = "0.57"
 pkg-config = "0.3"
+libimobiledevice-src = { path = "../libimobiledevice-src", optional = true }
 
 [features]
-vendored = []
+vendored = ["libimobiledevice-src"]

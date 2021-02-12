@@ -16,27 +16,30 @@ pub fn build() -> Vec<String> {
 		libplist_include.display().to_string(),
 	];
 
+	let libcnary_files = ["node.c", "node_list.c"]
+		.iter()
+		.map(|file| libcnary_dir.join(file))
+		.collect::<Vec<PathBuf>>();
+
+	let libplist_files = [
+		"base64.c",
+		"bplist.c",
+		"bytearray.c",
+		"hashtable.c",
+		"plist.c",
+		"ptrarray.c",
+		"time64.c",
+		"xplist.c",
+	]
+	.iter()
+	.map(|file| libplist_src.join(file))
+	.collect::<Vec<PathBuf>>();
+
 	Build::new()
 		.define("HAVE_TM_TM_GMTOFF", "1")
 		.define("HAVE_TM_TM_ZONE", "1")
-		.file(libcnary_dir.join("node.c"))
-		.file(libcnary_dir.join("node_list.c"))
-		.file(libplist_src.join("base64.c"))
-		.file(libplist_src.join("base64.h"))
-		.file(libplist_src.join("bplist.c"))
-		.file(libplist_src.join("bytearray.c"))
-		.file(libplist_src.join("bytearray.c"))
-		.file(libplist_src.join("hashtable.c"))
-		.file(libplist_src.join("hashtable.h"))
-		.file(libplist_src.join("plist.c"))
-		.file(libplist_src.join("plist.h"))
-		.file(libplist_src.join("ptrarray.c"))
-		.file(libplist_src.join("ptrarray.h"))
-		.file(libplist_src.join("strbuf.h"))
-		.file(libplist_src.join("time64.c"))
-		.file(libplist_src.join("time64.h"))
-		.file(libplist_src.join("time64_limits.h"))
-		.file(libplist_src.join("xplist.c"))
+		.files(libcnary_files)
+		.files(libplist_files)
 		.include(libcnary_include)
 		.include(libplist_include)
 		.include(libplist_src)
