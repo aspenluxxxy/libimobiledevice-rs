@@ -12,9 +12,13 @@ categories = ["external-ffi-bindings"]
 links = "irecovery"
 edition = "2018"
 
+[dependencies]
+libusb1-sys = { version = "0.5", features = ["vendored"], optional = true }
+
 [build-dependencies]
 bindgen = "0.57"
 pkg-config = "0.3"
+libirecovery-src = { path = "../libirecovery-src", optional = true }
 
 [features]
-vendored = []
+vendored = ["libirecovery-src", "libusb1-sys"]

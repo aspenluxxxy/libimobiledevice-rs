@@ -7,3 +7,6 @@
 [submodule "libimobiledevice-src/libimobiledevice"]
 	path = libimobiledevice-src/libimobiledevice
 	url = https://github.com/libimobiledevice/libimobiledevice
+[submodule "libirecovery-src/libirecovery"]
+	path = libirecovery-src/libirecovery
+	url = https://github.com/libimobiledevice/libirecovery

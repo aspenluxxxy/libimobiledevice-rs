@@ -9,7 +9,7 @@ readme = "../README.md"
 license = "Zlib"
 keywords = ["ios", "ffi", "usb", "apple"]
 categories = ["external-ffi-bindings"]
-links = "usbmuxd"
+links = "usbmuxd-2.0"
 edition = "2018"
 
 [build-dependencies]

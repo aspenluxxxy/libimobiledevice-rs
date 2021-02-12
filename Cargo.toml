@@ -3,6 +3,7 @@ members = [
 	"libimobiledevice-src",
 	"libimobiledevice-sys",
 	"libirecovery-sys",
+	"libirecovery-src",
 	"libplist-src",
 	"libusbmuxd-src",
 	"libusbmuxd-sys",

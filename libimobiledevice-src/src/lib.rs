@@ -1,7 +1,7 @@
 use cc::Build;
 use std::path::PathBuf;
 
-/// Builds libusbmuxd, returning the include directory on success.
+/// Builds libimobiledevice, returning the include directory on success.
 pub fn build() -> Vec<String> {
 	let mut include_path = libusbmuxd_src::build();
 

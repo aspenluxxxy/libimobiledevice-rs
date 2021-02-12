@@ -9,7 +9,7 @@ readme = "../README.md"
 license = "Zlib"
 keywords = ["ios", "ffi", "usb", "apple"]
 categories = ["external-ffi-bindings"]
-links = "imobiledevice"
+links = "imobiledevice-1.0"
 edition = "2018"
 
 [build-dependencies]
